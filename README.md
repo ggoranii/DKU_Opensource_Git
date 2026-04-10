@@ -102,4 +102,31 @@ After (3-way merge):
   feature:              E
 ```
 
+**실행 과정:**
+
+```bash
+# feature/docs 브랜치 생성 → commands.md 커밋
+git checkout -b feature/docs
+git add docs/commands.md
+git commit -m "docs: command 파일 추가"
+
+# main으로 돌아와 독립 커밋 생성 (히스토리 분기)
+git checkout main
+git add src/main.c
+git commit -m "feat: main.c 추가 "
+
+# 3-way merge 실행
+git merge feature/docs --no-ff -m "Merge branch 'feature/docs': 3-way merge"
+```
+**결과:**
+
+```
+Merge made by the 'ort' strategy.
+ docs/coommand.md | 2 ++
+ 1 file changed, 2 insertions(+)
+ create mode 100644 docs/coommand.md
+ ```
+
+ **특징:** 두 브랜치의 공통 조상(Base)을 기준으로 각 브랜치의 변경 사항을
+자동으로 통합합니다. Merge 커밋이 새로 생성됩니다.
 
