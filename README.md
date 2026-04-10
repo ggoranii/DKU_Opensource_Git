@@ -18,8 +18,7 @@ DKU_Opensource_Git/
 │   ├── calc.h
 │   └── utils.h
 ├── docs/               # 문서
-│   ├── commands.md     - Git 명령어 정리
-│   └── git_report.md   - 본 보고서
+│   └── command.md
 └── README.md
 ```
 
