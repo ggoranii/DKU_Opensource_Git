@@ -130,3 +130,36 @@ Merge made by the 'ort' strategy.
  **특징:** 두 브랜치의 공통 조상(Base)을 기준으로 각 브랜치의 변경 사항을
 자동으로 통합합니다. Merge 커밋이 새로 생성됩니다.
 
+---
+
+### 2.4 Conflict scenario
+
+**시나리오:** main 브랜치와 'feature/update-readme' 브랜치가 README.md 의 동일한 위치에 서로 다른 내용을 추가하여 자동 병합이 불가능한 상황
+
+```
+main:    ... ─── (기여 방법 섹션 추가) ──────────── M (수동 해결)
+              \                                    /
+feature:       └── ( 팀원 섹션 추가 ) ──────────
+```
+
+**충돌 발생 과정:**
+
+
+```bash
+// feature 브랜치에서 README에 '팀원' 섹션 추가
+git checkout -b feature/update-readme
+// README.md 수정 (팀원 섹션 추가)
+git add README.md
+git commit -m "README에 팀원 추가"
+
+// main에서 README의 같은 위치에 '기여 방법' 섹션 추가
+git checkout main
+// README.md 수정 (기여 방법 추가)
+git add README.md
+git commit -m "README에 기여 방법 추가"
+
+// 병합 시도 → 충돌 발생
+git merge feature/update-readme
+```
+
+**기여 방법:** 이 저장소를 Fork
