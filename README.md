@@ -154,9 +154,9 @@ git commit -m "README에 팀원 추가"
 
 // main에서 README의 같은 위치에 '기여 방법' 섹션 추가
 git checkout main
-// README.md 수정 (기여 방법 섹션 추가)
+// README.md 수정 (기여 방법 추가)
 git add README.md
-git commit -m "docs: README에 기여 방법 섹션 추가"
+git commit -m "README에 기여 방법 추가"
 
 // 병합 시도 → 충돌 발생
 git merge feature/update-readme
