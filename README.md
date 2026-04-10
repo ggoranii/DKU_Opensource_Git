@@ -2,7 +2,7 @@
 
 ## 프로젝트 개요
 
-**프로젝트명:** C 게산기 (Git 활용 실습)
+**프로젝트명:** C 계산기 (Git 활용 실습)
 **언어:** C
 **저장소:** https://github.com/ggoranii/DKU_Opensource_Git.git
 
@@ -31,7 +31,7 @@ DKU_Opensource_Git/
 
 Github를 로컬에 클론 후 프로젝트 기본 구조 생성하여 첫 커밋을 수행했습니다.
 
-...bash
+```bash
 git clone https://github.com/ggoranii/DKU_Opensource_Git.git
 // README.md, include/calc.h, src/calc.c 생성
 git add README.md include/calc.h src/calc.c
