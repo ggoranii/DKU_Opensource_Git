@@ -84,3 +84,22 @@ Fast-forward
 **결론:** 새로운 Merge 커밋이 생성되지 않고 HEAD 포인터만 앞으로 이동합니다.
 분기점 이후 main에 변경이 없을 때 발생합니다.
 
+---
+
+### 2.3 3-Way Merge
+
+**시나리오:** 'feature/docs' 브랜치에서 문서 작업과 동시에 main 브랜치에서도 'src/main.c'를 추가해 히스토리가 분기된 상태에서 병합.
+
+```
+Before:
+  main:    A---B---C---D  (D = main.c 추가)
+                   |
+  feature:         E      (E = commands.md 추가)
+
+After (3-way merge):
+  main:    A---B---C---D---M
+                       \  /
+  feature:              E
+```
+
+
