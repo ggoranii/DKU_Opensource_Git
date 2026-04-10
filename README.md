@@ -40,3 +40,47 @@ git commit -m "계산기 모듈 및 README 추가"
 
 ---
 
+### 2.2 FF Merge
+
+**시나리오:** `feature/add-utils` 브랜치에서 utils 모듈을 추가하고, main에 변경 없이 병합.
+
+```
+Before:
+  main: A---B
+                \
+  feature:       C   (utils 모듈 추가)
+
+After (FF merge):
+  main: A---B---C
+```
+
+**실행 과정:**
+
+```bash
+// 브랜치 생성 및 전환
+git checkout -b feature/add-utils
+
+// utils 파일 추가 후 커밋
+git add include/utils.h src/utils.c
+git commit -m "feat: utils 모듈 추가"
+
+// main으로 돌아와 FF merge
+git checkout main
+git merge feature/add-utils
+```
+
+**결과:**
+
+```
+Updating 4766a68..0ae7ec1
+Fast-forward
+ include/utils.h |  7 +++++++
+ src/utils.c     | 24 ++++++++++++++++++++++++
+ 2 files changed, 31 insertions(+)
+ create mode 100644 include/utils.h
+ create mode 100644 src/utils.
+```
+
+**결론:** 새로운 Merge 커밋이 생성되지 않고 HEAD 포인터만 앞으로 이동합니다.
+분기점 이후 main에 변경이 없을 때 발생합니다.
+
