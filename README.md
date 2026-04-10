@@ -162,4 +162,12 @@ git commit -m "README에 기여 방법 추가"
 git merge feature/update-readme
 ```
 
-**기여 방법:** 이 저장소를 Fork
+**해결 방법:** 충돌 마커 제거, 두 변경 사항 모두 제거하여 해결.
+
+```bash
+# 충돌 파일 수동 편집 후
+git add README.md
+git commit -m "Merge branch 'feature/update-readme': 충돌 해결 - 팀원 및 기여 방법 삭제"
+```
+
+---
